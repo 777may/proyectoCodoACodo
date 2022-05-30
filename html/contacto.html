@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="author" content="Mayra Gola">
+    <meta name="description" content="formulario de dos pesos">
+    <title>Contacto</title>
+    <!--------------- Para bootstrap -------------->
+    <link rel="stylesheet" href="../css/BootstrapYOtros/bootstrap-5.2.0-beta1-dist/css/bootstrap.min.css" media="screen">
+    <!-- Parece opcional para Bootstrap 5 -->
+    <script src="../css/BootstrapYOtros/jquery-3.6.0.min.js"></script>
+    <!-------------------------------------->
+    <script src="../css/BootstrapYOtros/popper.min.js"></script>
+    <script src="../css/BootstrapYOtros/bootstrap-5.2.0-beta1-dist/js/bootstrap.min.js"></script>
+    <!--------------------------------------------->
+    <link rel="stylesheet" href="../css/style.css">
+</head>
+<body>
+    <header id="headerInicio">
+        <h1>Contacteme:</h1>
+    </header>
+    <nav>
+        <ul id="menu-pp">
+            <li><a href="../index.html">Inicio</a></li>
+            <li><a href="juego.html">Juego</a></li>
+        </ul>
+    </nav>
+    <main>
+        <section>
+            <article>
+                <form action="https://formspree.io/f/mnqwzzbr" method="POST" class="form-check container" id="formContacto">
+                    <fieldset class="row">
+                        <legend>Datos Personales:</legend>
+                        <label class="col-12 col-md-6">Nombre: 
+                            <input type="text" name="nombre" placeholder="Nombre" class="form-control form-control-lg">
+                        </label>
+                        <label class="col-12 col-md-6">E-mail: 
+                            <input type="email" name="mail" placeholder="su-email@mail.com" class="form-control form-control-lg">
+                        </label>
+                    </fieldset>
+                    <fieldset class="row">
+                        <legend>Otros datos:</legend>
+                        <label class="col-12 col-lg-6">Motivo: 
+                        <select name="motivo" class="form-select form-select-lg mb-3">
+                            <option value="queja">Reclamo</option>
+                            <option value="pregunta">Consulta</option>
+                            <option value="ayuda" selected>Sugerencia</option>
+                        </select>
+                        </label>
+                        <label class="col-12 col-lg-6">Consulta: 
+                            <textarea name="consulta" cols="10" rows="5" placeholder="Escriba Aquí..." class="form-control form-control-lg"></textarea>
+                        </label>
+                        <label class="col-12">¿Desea recibir correos sobre nosotros?
+                            <input type="checkbox" name="correos" value="si">
+                        </label>
+                    </fieldset>
+                    <input type="submit" class="boton" id="btn-consultar" value="Enviar">
+                </form>
+            </article>
+        </section>
+    </main>
+    <footer>
+        <h3>Argentineada:</h3>
+        <section>
+            <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d26097205.826428093!2d-81.65499145927043!3d-37.01709417045826!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x95bccaf5f5fdc667%3A0x3d2f77992af00fa8!2sArgentina!5e0!3m2!1ses-419!2sar!4v1653890853309!5m2!1ses-419!2sar" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+        </section>
+    </footer>
+    <script src="../js/script.js"></script>
+</body>
+</html>

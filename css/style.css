@@ -1,0 +1,673 @@
+/********FUENTES**********/
+@font-face {
+    font-family: "Pacifico";
+    src: url('../fonts/Pacifico/Pacifico-Regular.ttf');
+}
+@font-face {
+    font-family: "Kalam";
+    src: url('../fonts/Kalam/Kalam-Bold.ttf');
+}
+/**/
+
+/***********ANIMACION GALLINA*******/
+@keyframes moveWing {
+    10%{
+        transform: rotate(60deg);
+        top: 39%;
+        right: 34%;
+    } 
+    40%{
+        top: 30%;
+        right: 25%;
+        transform: rotate(12deg);
+    }  
+}
+@keyframes moveHead {
+    10%{
+        transform: rotate(-10deg);
+    }
+    20%{
+        transform: rotate(0deg);
+    }
+}
+@keyframes moveHair {
+    10%{
+        transform-origin: 26%;
+        transform: rotate(-85deg);
+        top: 34%;
+    }
+    20%{
+        transform-origin: initial;
+        top: 32%;
+        transform: rotate(-75deg);
+    }
+}
+/**/
+/***********ANIMACION DEL CERDO*******/
+@keyframes parpadeoOjo {
+    10%{
+        top: 45%;
+        height: 2px;
+    }
+    20%{
+        top: 30%;
+        height: 18px;
+    }
+}
+@keyframes parpadeoBrillo {
+    10%{
+        height: 1px;
+    }
+    20%{
+        height: 5px;
+    }
+}
+/**/
+
+/********ESTILOS DE LA GALLINA********/
+#chicken{
+    --skinright: #d4a795;
+    --skinleft: #f7c2ab;
+    --bodyNNeck: #ce6001;
+    --wing: #a34600;
+    --tailHeadNInnerNeck: #7c3101;
+    --cheeks: #e49a94;
+    --beak: #e8a453;
+    --hair: #ee2828;
+    --eyes: #080303;
+    --innerEyes: #f9f0ea;
+    position: relative;
+    margin: 1rem auto;
+    display: block;
+    min-width: 55px;
+    height: 90px;
+}
+    #chicken *{
+        position: absolute;
+    }
+    #bird-leg1{
+        background-color: var(--skinleft);
+        width: 3px;
+        height: 16px;
+        border-radius: 25%;
+        top: 100%;
+        left: 40%;
+        z-index: 2;
+    }
+        #bird-foot1{
+            background-color: var(--skinleft);
+            width: 8px;
+            height: 3px;
+            border-radius: 70% 25% 25% 25%;
+            top: 85%;
+            right: 25%;
+        } 
+    #bird-leg2{
+        background-color: var(--skinright);
+        width: 3px;
+        height: 16px;
+        border-radius: 25%;
+        top: 99%;
+        right: 63%;
+        z-index: 1;
+    }
+        #bird-foot2{
+            background-color: var(--skinright);
+            width: 8px;
+            height: 3px;
+            border-radius: 70% 25% 25% 25%;
+            top: 85%;
+            right: 25%;
+        }
+    #bird-tail1{
+        top: 80%;
+        left: 67%;
+        transform: rotate(-23deg);
+        z-index: 3;
+    }
+        #bird-tail2{
+            top: 100%;
+            transform: rotate(23deg);
+            z-index: 6;
+        }
+        #bird-tail3{
+            top: 180%;
+            right: 42%;
+            transform: rotate(40deg);
+            z-index: 5;
+        }
+        #bird-tail4{
+            top: 200%;
+            right: 90%;
+            transform: rotate(60deg);
+            z-index: 4;
+        }
+    #bird-body{
+        background-color: var(--bodyNNeck);
+        top: 65%;
+        right: 25%;
+        width: 50px;
+        height: 32px;
+        border-radius: 40% 50% 60% 80%;
+        transform: rotate(12deg);
+        z-index: 3;
+    }
+        #bird-wing{
+            top: 30%;
+            right: 25%;
+            width: 25px;
+            height: 10px;
+            border-radius: 50% 100% 100% 70%;
+            transform: rotate(12deg);
+            z-index: 4;
+            animation: moveWing 10s ease 0s infinite;
+        }
+            #bird-inner-wing1{
+                top: 78%;
+                right: 40%;
+                transform: rotate(21deg);
+                z-index: 5;
+            }
+            #bird-inner-wing2{
+                top: 65%;
+                right: 16%;
+                transform: rotate(23deg);
+                z-index: 6;
+            }
+        #bird-neck{
+            bottom: 65%;
+            right: 86%;
+            background-color: var(--bodyNNeck);
+            width: 10px;
+            height: 32px;
+            border-radius: 30%;
+            transform: rotate(-15deg);
+            z-index: 5;
+            
+        }
+            #bird-inner-neck1{
+                top: 36%;
+                right: 65%;
+                transform: rotate(96deg);
+            }
+            #bird-inner-neck2{
+                top: 32%;
+                left: 58%;
+                transform: rotate(78deg);
+                
+            }
+            #bird-inner-neck3{
+                top: 41%;
+                left: 30%;
+                transform: rotate(85deg);
+                
+            }
+            #bird-inner-neck4{
+                top: 43%;
+                right: 35%;
+                transform: rotate(96deg);
+                
+            }
+    #bird-head{
+        top: 35%;
+        right: 95%;
+        background-color: var(--tailHeadNInnerNeck);
+        width: 14px;
+        height: 14px;
+        z-index: 6;
+        animation: moveHead 5s ease 0s infinite;
+    }
+        #bird-beak{
+            top: 60%;
+            right: 85%;
+            background-color: var(--beak);
+            width: 6px;
+            height: 4px;
+            border-radius: 100% 50% 25% 40%;
+            transform: rotate(-35deg);
+        }
+        #bird-eye{
+            top: 30%;
+            left: 30%;
+            background-color: var(--eyes);
+            width: 3px;
+            height: 3px;
+        }
+            #bird-inner-eye{
+                top: 50%;
+                left: 10%;
+                background-color: var(--innerEyes);
+                width: 1px;
+                height: 1px;
+            }
+        #bird-cheek{
+            top: 48%;
+            left: 60%;
+            background-color: var(--cheeks);
+            transform: rotate(-40deg);
+            width: 3px;
+            height: 2px;
+        }
+    #bird-hair1{
+        top: 32%;
+        right: 86%;
+        width: 10px;
+        height: 5px;
+        border-radius: 45%;
+        transform: rotate(-75deg);
+        animation: moveHair 5s ease 0s infinite;
+    }
+        #bird-hair2{
+            bottom: 95%; 
+            right: 18%; 
+            transform: rotate(-20deg);
+            
+        }
+        #bird-hair3{
+            bottom: 165%;
+            right: 35%;
+            transform: rotate(-50deg);
+            
+        }
+        #bird-hair4{
+            bottom: 210%;
+            right: 60%;
+            transform: rotate(-70deg);
+            
+        }
+.bird-tail{
+    background-color: var(--wing);
+    width: 10px;
+    height: 5px;
+    border-radius: 0% 100% 100% 0%;
+}
+.bird-inner-wing{
+    background-color: var(--wing);
+    width: 10px;
+    height: 4px;
+    border-radius: 0% 100% 100% 0%;
+}
+.bird-inner-neck{
+    background-color: var(--tailHeadNInnerNeck);
+    width: 7px;
+    height: 2.5px;
+    border-radius: 0% 100% 100% 0%;
+}
+.bird-hair{
+    background-color: var(--hair);
+    width: 6px;
+    height: 4px;
+    border-radius: 30% 60% 60% 30%;
+}
+.round{
+    border-radius: 50%;
+}
+/***************************/
+/********ESTILOS DEL CERDO********/
+#pig{
+    --pigSkin: pink;
+    --pigInner: rgb(88, 36, 23);
+    --eyes: #080303;
+    --innerEyes: #f9f0ea;
+    position: relative;
+    margin: 1rem auto;
+    display: block;
+    min-width: 55px;
+    height: 90px;
+}
+#pig *{
+    position: absolute;
+}
+    #pig-ear1{
+        right: 70%; 
+        transform: rotate(40deg);
+    }
+        #pig-inner-ear1{
+            left: 20%;
+        }
+    #pig-ear2{
+        right: 140%; 
+        transform: rotate(-40deg);
+    }
+        #pig-inner-ear2{
+            right: 20%;
+        }
+    #pig-head{
+        background-color: var(--pigSkin);
+        top: 100%;
+        right: 70%; 
+        width: 60px;
+        height: 60px;
+        z-index: 2;
+    }
+        #pig-eye1{
+            left: 59%;
+            animation: parpadeoOjo linear 5s 0s infinite;
+        }
+        #pig-eye2{
+            right: 59%;
+            animation: parpadeoOjo linear 5s 0s infinite;
+        }
+        #pig-nose{
+            top: 55%;
+            left: 30%;
+            border: 1px solid var(--pigInner);
+            background-color: var(--pigSkin);
+            width: 22px;
+            height: 13px;
+            z-index: 5;
+        }
+            #pig-inner-nose1{
+                left: 12%;
+            }
+            #pig-inner-nose2{
+                right: 12%;
+            }
+        #pig-inner-mouth{
+            background-color: var(--eyes);
+            top: 60%;
+            left: 29%;
+            width: 20px;
+            height: 20px;
+            z-index: 3;
+        }
+            #pig-mouth{
+                background-color: var(--pigSkin);
+                bottom: 15%;
+                width: 23px;
+                height: 20px;
+                z-index: 4;
+            }
+.pig-inner-nose{
+    top: 22%;
+    background-color: var(--eyes);
+    width: 4px;
+    height: 5px;
+    z-index: 4;
+}
+.pig-eye{
+    background-color: var(--eyes);
+    width: 15px;
+    height: 18px;
+    top: 30%;
+    z-index: 2;
+}
+.pig-eye .inner-eye{
+    top: 15%;
+    left: 12%;
+    background-color: var(--innerEyes);
+    width: 4px;
+    height: 5px;
+    transform: rotate(10deg);
+    z-index: 3;
+    animation: parpadeoBrillo linear 5s 0s infinite;
+}
+.pig-ear{
+    top: 90%;
+    background-color: var(--pigSkin);
+    border-radius: 50% 50% 0% 0%;
+    width: 20px;
+    height: 35px;
+    z-index: 1;
+}
+.pig-ear .inner-ear{
+    top: 10%;  
+    background-color: var(--pigInner);
+    z-index: 2;
+    width: 15px;
+
+}
+/***************************/
+
+/***********ESTILOS INICIO****************/
+#headerInicio{
+    display: flex;
+    flex-direction: row;
+}
+#main-inicio{
+    padding: 1rem;
+}
+#main-inicio h2{
+    padding: 0.5rem;
+    padding-left: 1rem;
+    color: var(--verde2);
+    font-size: 2rem;
+}
+#main-inicio p{
+    font-family: "Kalam";
+    font-size: 1.2rem;
+    text-indent: 1.5rem;
+    line-height: 1.8rem;
+}
+#main-inicio figure{
+    max-width: 620px;
+    margin: 0.7rem auto;
+}
+#main-inicio img{
+    border: 7px dashed var(--verde5);
+}
+
+/***************************/
+
+/********ESTILOS JUEGO**********/
+#main-juego{
+    display: flex;
+    flex-direction: column;
+}
+    #btn-agregar{
+        margin: 0.5rem;
+    }
+    #btn-jugar{
+        padding-left: 0.5rem;
+        padding-right: 0.5rem;
+        min-width: min-content;
+        max-width: 200px;
+    }       
+    #sec-imagen-juego{
+        border-top: 1rem solid var(--verde1);
+    }
+        #sec-imagen-juego h2{
+            color: var(--verde1);
+            font-size: 1.1rem;
+            margin: 0.5rem 1rem;
+            text-align: center;
+        }
+.pp{
+    background-color: var(--verde3);
+    border-top: 1rem solid var(--verde1);
+    padding: 1rem;
+}
+/*form*/
+.formulario{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+.margin-bottom{
+    margin-bottom: 1rem;
+}
+.pp .formulario input[type="text"]{
+    border: 1px solid var(--verde5);
+}
+.pp .formulario input[type="text"]:hover{
+    border: 1px solid var(--verde1);
+}
+.pp .formulario, .pp .formulario input[type="text"]{
+    font-family: "Kalam";
+    text-align: center;
+    color: var(--verde1);
+    padding: 0.3rem;
+}
+.pp .formulario input[type="text"].error{
+    border: 2px solid var(--error);
+    color: var(--error);
+}
+.boton{
+    font-family: "Kalam";
+    border: 2px solid var(--verde1);  
+    border-radius: 10%; 
+    padding: 2px 5px;
+}
+.tareas .lista {
+    list-style: none;
+}
+.tareas .lista li{
+    border-bottom: 0.1rem solid var(--verde1);
+    padding: 0.3rem;
+}
+.tareas .lista li:hover{
+    text-decoration: line-through;
+}
+/*galeria*/
+#galeriaJuego h2{
+    color: var(--verde1);
+    text-align: center;
+}
+#figure-imagenes{
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+    justify-content: center;
+    gap: 15px;
+}
+#figure-imagenes img{
+    margin: auto;
+}
+
+.incorrecto{
+    border: 15px solid var(--error);
+    border-radius: 30%;
+}
+.correcto{
+    border: 15px solid var(--good);
+    border-radius: 30%;
+}
+.noEnLista{
+    color: var(--error);
+}
+
+.figure-imagen{
+    max-width: 100%;
+}
+
+/****************************/
+/********ESTILOS CONTACTO***********/
+
+#formContacto{
+    display: flex;
+    flex-direction: column;
+}
+#formContacto fieldset{
+    padding: 1rem;
+}
+#formContacto fieldset label{
+    padding: 0.5rem;
+}
+#formContacto input[type = "submit"]{
+    padding: 0.5rem 1rem;
+    margin: 1rem;
+    max-width: max-content;
+    align-self: center;
+}
+
+/****************************/
+
+/****ESTILOS GENERALES*******/
+*{
+    margin: 0;
+    padding: 0;
+    border: 0;
+}
+#menu-pp{
+    list-style: none;
+    display: flex;
+    flex-direction: row;
+    background-color: var(--verde3);
+    padding-left: 0;
+}
+#menu-pp li{
+    margin: 1rem;
+}
+#menu-pp li a{
+    color: var(--verde1);
+    text-decoration: none;
+    font-weight: bolder;    
+    font-size: 1.5rem;
+}
+body{
+    --verde1: #47744b;
+    --verde2: #9ac25e;
+    --verde3: #a7c08a;
+    --verde4: #c2d9ba;
+    --verde5: #eaeedc;
+    --error: red;
+    --good: green;
+    font-family: "Kalam";
+    background-color: var(--verde4);
+}
+header{
+    background-color: var(--verde5);
+}
+h1{
+    margin: auto;
+    font-family: "Pacifico" ;
+    padding: 0.3rem;
+    font-size: 3rem;
+}
+
+img{
+    max-width: 100%;
+}
+textarea{
+    resize: none;
+}
+footer{
+    background-color: var(--verde3);
+}
+footer h3{
+    font-family: "Pacifico";
+    margin-left: 10%;
+}
+footer section{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+}
+
+/************************/
+@media screen and (min-width: 360px){
+    .pig-ear{
+        top: 40%;
+    }
+    #pig-head{
+        top: 50%;
+    }
+}
+@media screen and (min-width: 768px){
+    /********ESTILOS JUEGO**********/
+    #main-juego{
+        flex-direction: row;
+    }
+        #sec-form-juego{
+            width: 30%;
+        }
+        #sec-imagen-juego{
+            width: 70%;
+            }
+            #sec-imagen-juego h2{
+                margin: 0.5rem 1rem;
+            }
+        #galeriaJuego{
+            width: 70%;
+        }
+    /*form*/
+    /*galeria*/
+
+    /****ESTILOS GENERALES*******/
+
+}
+@media screen and (min-width: 1024px){
+    /* realmente no encontré ocasión para usarlo */
+}
+
+
+
