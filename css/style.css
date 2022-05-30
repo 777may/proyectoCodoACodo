@@ -663,11 +663,12 @@ footer section{
 @media screen and (min-width: 1024px){
     /********ESTILOS JUEGO**********/
     #sec-form-juego{
-        width: 40%;
+        width: 50%;
     }
     /****ESTILOS GENERALES*******/
-    padding-left: 2rem;
-}
+    #menu-pp{
+        padding-left: 2rem;
+    }
 }
 
 
