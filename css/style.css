@@ -489,7 +489,7 @@
 .pp .formulario input[type="text"]{
     border: 1px solid var(--verde5);
 }
-.pp .formulario input[type="text"]:hover{
+.pp .formulario input[type="text"]:hover, .pp .formulario input[type="text"]:focus{
     border: 1px solid var(--verde1);
 }
 .pp .formulario, .pp .formulario input[type="text"]{
